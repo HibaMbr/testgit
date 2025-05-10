@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { BrowserRouter, Routes, Route, NavLink } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, NavLink } from 'react-router-dom' // routing with react-router-dom
 
 import Home from './component/Home'
 import Comments from './component/Comments'

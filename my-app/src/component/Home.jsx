@@ -1,19 +1,20 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import Form from './Form'
+import styles from './Home.module.css'; // Import CSS Module
 
 export default function Home({ feedbacks, onsubmit }) {
   return (
-    <div style={{ padding: 20 }} className='Form&List'>
-      <h1>Visual Feedback Board</h1> 
+    <div className={styles.container}>
+      <h1 className={styles.title}>Visual Feedback Board</h1> 
 
       {/* calling the Form page , already created so we can use onsubmit function*/}
       <Form onsubmit={onsubmit} />
 
-      <hr style={{ margin: '3rem 0' }} />
+      <hr className={styles.divider} />
 
       {/* Start the list part */}
-      <h2>Feedback List</h2>
+      <h2 className={styles.title}>Feedback List</h2>
 
       {/* if there is no feedback we show P  */}
       {feedbacks.length === 0 ? (
@@ -25,13 +26,7 @@ export default function Home({ feedbacks, onsubmit }) {
           {feedbacks.map((fb, idx) => (
             <li
               key={idx}
-              style={{
-                marginBottom: '0.5rem',
-                padding: '0.5rem',
-                border: '1px solid #ddd',
-                borderRadius: 4
-              }}
-            >
+              className={styles['feedback-item']}>
                 {/* this make a comment clickable and takes you (navigate) to comments page already created */}
               <Link to="/comments" style={{ textDecoration: 'none', color: '#0077cc' }}>
                 {fb.comment.length > 30

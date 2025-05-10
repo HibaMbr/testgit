@@ -1,9 +1,10 @@
 import React from 'react'
+import styles from './Comments.module.css'; // Import CSS Module
 
 export default function Comments({ feedbacks }) {
   return (
-    <div style={{ padding: 20 }}>
-      <h1>All Comments</h1>
+    <div className={styles.container}>
+      <h1 className={styles.title}>All Comments</h1>
 
        {/* No feedback then we show the message No comments yet */}
       {feedbacks.length === 0 ? (
@@ -14,13 +15,7 @@ export default function Comments({ feedbacks }) {
           {feedbacks.map((fb, i) => (
             <li
               key={i}
-              style={{
-                marginBottom: 20,
-                padding: 10,
-                border: '1px solid #ccc',
-                borderRadius: 4
-              }}
-            >
+              className={styles['feedback-item']}>
               {/* Show name or Anonyme name */}
               <div>
               <strong>Name:</strong> {fb.name || 'Anonymous'}<br/>
@@ -43,9 +38,9 @@ export default function Comments({ feedbacks }) {
                     ? fb.image
                     : URL.createObjectURL(fb.image)
                   }
-                  alt=""
+                  alt="User upload"
                   width={100}
-                  style={{ marginTop: 8 }}
+                  className={styles['feedback-image']}
                 />
                 </div>
               )}

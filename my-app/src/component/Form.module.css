@@ -1,0 +1,33 @@
+/* Form.module.css */
+.form {
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #fff9fb; /* Light pink */
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(255, 182, 193, 0.2);
+}
+
+.label {
+  display: block;
+  margin: 10px 0;
+  color: #d35d8d; /* Dusty pink */
+}
+
+.input, .select, .textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ffc0cb; /* Baby pink */
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.button {
+  background: #ffb6c1; /* Light pink */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+}
